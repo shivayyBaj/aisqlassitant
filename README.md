@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+
 # 🤖 AI SQL Assistant
 
 ## 📌 Overview
@@ -61,4 +63,10 @@ ai-sql-assistant
 
 ## 👨‍💻 Author
 
-Shivesh Bajpai
+# Shivesh Bajpai
+
+# aisqlassitant
+
+AI-powered web app that converts natural language questions into optimized SQL queries and visualizes results from uploaded CSV datasets.
+
+> > > > > > > 0a702cc84f28aaedbef6e723de04306b782db428

@@ -1,7 +1,17 @@
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
-genai.configure(api_key="AIzaSyDIcKecD6s-hfW1cv5r2FmmzhmCDwyleMw")
+# Load environment variables
+load_dotenv()
 
+# Get API key from .env
+api_key = os.getenv("GEMINI_API_KEY")
+
+# Configure Gemini
+genai.configure(api_key=api_key)
+
+# Load model
 model = genai.GenerativeModel("gemini-3-flash-preview")
 
 
@@ -28,6 +38,7 @@ Question:
 
     sql = response.text
 
-    sql = sql.replace("```sql", "").replace("```", "")
+    # Remove markdown formatting if model returns it
+    sql = sql.replace("```sql", "").replace("```", "").strip()
 
     return sql

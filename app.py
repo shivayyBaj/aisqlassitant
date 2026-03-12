@@ -1,22 +1,19 @@
-
-
-
-
-
-
-
-
-
-
-
 import streamlit as st
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
 from database import store_csv, run_query
 from llm import generate_sql
 from utils.schema_helper import get_schema
 from explain_results import explain
 from chart_generator import generate_chart
+
+
+load_dotenv()
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
 
 st.set_page_config(
     page_title="AI SQL Assistant",
